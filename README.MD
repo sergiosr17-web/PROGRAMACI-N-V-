@@ -511,3 +511,17 @@ git log --all --graph --oneline --decorate
 dotnet build
 dotnet run
 ```
+---
+
+## Integración de cambios (merge)
+
+Aunque no es uno de los 4 desafíos puntuados, para demostrar la integración de cambios se fusionó `feature/telefono-estudiante` hacia `main`.
+
+**Comandos utilizados:**
+
+```bash
+git switch main
+git merge feature/telefono-estudiante --no-ff -m "Integra feature/telefono-estudiante a main"
+--
+Explicación:
+Se utilizó --no-ff (no fast-forward) para forzar la creación de un commit de fusión explícito. Esto deja evidencia visual en el árbol del historial (git log --graph) de que la funcionalidad de la rama de desarrollo fue integrada formalmente en la rama principal.
